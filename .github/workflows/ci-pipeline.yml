@@ -39,4 +39,4 @@ jobs:
     - name: Build, tag, and push image to Amazon ECR
       run: |
         docker tag docker.io/xyramsoft/arcadia-fhir/arcadia-fhir-api:latest 427804588164.dkr.ecr.us-east-1.amazonaws.com/arcadia-fhir-api:${{ steps.date.outputs.date }}
-        docker push 427804588164.dkr.ecr.us-east-1.amazonaws.com/arcadia-fhir-api:latest
+        docker push 427804588164.dkr.ecr.us-east-1.amazonaws.com/arcadia-fhir-api:${{ steps.date.outputs.date }}
