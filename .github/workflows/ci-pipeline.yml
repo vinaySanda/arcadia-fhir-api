@@ -34,7 +34,7 @@ jobs:
       
     - name: Get current date
       id: date
-      run: echo "::set-output name=date::$(date +'Date-%Y-%m-%d-Time-%H-%M-%S')"
+      run: echo "::set-output name=date::$(date +'%Y%m%d-${{ steps.vars.outputs.sha_short }}')"
         
     - name: Build, tag, and push image to Amazon ECR
       run: |
