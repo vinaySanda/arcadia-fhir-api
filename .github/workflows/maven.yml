@@ -21,3 +21,18 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn spring-boot:build-image
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: Build, tag, and push image to Amazon ECR
+      run: |
+        docker tag arcadia-fhir-api:latest 427804588164.dkr.ecr.us-east-1.amazonaws.com/arcadia-fhir-api:latest
+        docker push 427804588164.dkr.ecr.us-east-1.amazonaws.com/arcadia-fhir-api:latest
