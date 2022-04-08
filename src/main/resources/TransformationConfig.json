@@ -1,0 +1,277 @@
+{
+	"type": "config",
+	"name": "dynamicApiConfig",
+	"version": "1.0",
+	"@note": "FHIR APIs to Arcadia APIs Mappong",
+	"resources": {
+		"AllergyIntolerance": [
+			{
+				"arcadiaResourceName": "allergy",
+				"structureDefinition": "ArcadiaAllergyData",
+				"structureMap": "ArcadiaAllergyMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance",
+				"dateFields": [
+					"onset_date",
+					"resolved_date",
+					"modify_timestamp",
+					"create_timestamp"
+				],
+				"provenanceStructureDefinition": "AcracadiaAllergyProvenanceData",
+				"provenanceStructureMap": "AcracadiaAllergyProvenanceMap"
+			}
+		],
+		"Appointment": [
+			{
+				"arcadiaResourceName": "appointment",
+				"structureDefinition": "ArcadiaAppointmentData",
+				"structureMap": "ArcadiaAppointmentMap",
+				"resourceProfileUrl": "",
+				"dateFields": [],
+				"provenanceStructureDefinition": "ArcadiaAppointmentProvenanceData",
+				"provenanceStructureMap": "ArcadiaAppointmentProvenanceMap"
+			}
+		],
+		"Condition": [
+			{
+				"arcadiaResourceName": "assessment",
+				"structureDefinition": "ArcadiaAssessmentData",
+				"structureMap": "ArcadiaAssessmentMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition",
+				"dateFields": [],
+				"provenanceStructureDefinition": "ArcadiaAssessmentProvenanceData",
+				"provenanceStructureMap": "ArcadiaAssessmentProvenanceMap"
+			},
+			{
+				"arcadiaResourceName": "problem",
+				"structureDefinition": "AcracadiaConditionData",
+				"structureMap": "ArcadiaConditionMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition",
+				"dateFields": [
+					"onset_date",
+					"resolved_date",
+					"modify_timestamp",
+					"create_timestamp"
+				],
+				"provenanceStructureDefinition": "AcracadiaConditionProvenanceData",
+				"provenanceStructureMap": "AcracadiaConditionProvenanceMap"
+			}
+		],
+		"DiagnosticReport": [
+			{
+				"arcadiaResourceName": "result",
+				"structureDefinition": "ArcadiaLabResultReportingResultData",
+				"structureMap": "ArcadiaLabResultReportingResultMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab",
+				"dateFields": [],
+				"provenanceStructureDefinition": "ArcadiaLabResultReportingResultProvenanceData",
+				"provenanceStructureMap": "ArcadiaLabResultReportingResultProvenanceMap"
+			}
+		],
+		"Encounter": [
+			{
+				"arcadiaResourceName": "encounter",
+				"structureDefinition": "ArcadiaEncounterData",
+				"structureMap": "ArcadiaEncounterMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter",
+				"dateFields": [
+					"encounter_date",
+					"modify_timestamp"
+				],
+				"provenanceStructureDefinition": "ArcadiaEncounterProvenanceData",
+				"provenanceStructureMap": "ArcadiaEncounterProvenanceMap"
+			},
+			{
+				"arcadiaResourceName": "adt",
+				"structureDefinition": "ArcadiaAdtData",
+				"structureMap": "ArcadiaAdtMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter",
+				"dateFields": [],
+				"provenanceStructureDefinition": "ArcadiaAdtProvenanceData",
+				"provenanceStructureMap": "ArcadiaAdtProvenanceMap"
+			}
+		],
+		"Immunization": [
+			{
+				"arcadiaResourceName": "immunization",
+				"structureDefinition": "ArcadiaImmunizationData",
+				"structureMap": "ArcadiaImmunizationMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization",
+				"dateFields": [
+					"completed_date",
+					"create_timestamp",
+					"modify_timestamp"
+				],
+				"provenanceStructureDefinition": "ArcadiaImmunizationProvenanceData",
+				"provenanceStructureMap": "ArcadiaImmunizationProvenanceMap"
+			}
+		],
+		"Location": [
+			{
+				"arcadiaResourceName": "planSite",
+				"structureDefinition": "ArcadiaPlanSiteData",
+				"structureMap": "ArcadiaPlanSiteMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location",
+				"dateFields": [],
+				"provenanceStructureDefinition": "ArcadiaPlanSiteProvenanceData",
+				"provenanceStructureMap": "ArcadiaPlanSiteProvenanceMap"
+			},
+			{
+				"arcadiaResourceName": "planSiteAddress",
+				"structureDefinition": "ArcadiaPlanSiteAddressData",
+				"structureMap": "AcracadiaPlanSiteAddressMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location",
+				"dateFields": [],
+				"provenanceStructureDefinition": "ArcadiaPlanSiteAddressProvenanceData",
+				"provenanceStructureMap": "ArcadiaPlanSiteAddressProvenanceMap"
+			},
+			{
+				"arcadiaResourceName": "planLocation",
+				"structureDefinition": "ArcadiaPlanLocationData",
+				"structureMap": "ArcadiaPlanLocationMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location",
+				"dateFields": [],
+				"provenanceStructureDefinition": "ArcadiaPlanLocationProvenanceData",
+				"provenanceStructureMap": "ArcadiaPlanLocationProvenanceMap"
+			},
+			{
+				"arcadiaResourceName": "planLocationAddress",
+				"structureDefinition": "ArcadiaPlanLocationAddressData",
+				"structureMap": "ArcadiaPlanLocationAddressMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location",
+				"dateFields": [],
+				"provenanceStructureDefinition": "ArcadiaPlanLocationAddressProvenanceData",
+				"provenanceStructureMap": "ArcadiaPlanLocationAddressProvenanceMap"
+			}
+		],
+		"MedicationRequest": [
+			{
+				"arcadiaResourceName": "medicationList",
+				"structureDefinition": "ArcadiaMedicationListData",
+				"structureMap": "ArcadiaMedicationListMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest",
+				"dateFields": [],
+				"provenanceStructureDefinition": "ArcadiaMedicationListProvenanceData",
+				"provenanceStructureMap": "ArcadiaMedicationListProvenanceMap"
+			},
+			{
+				"arcadiaResourceName": "prescription",
+				"structureDefinition": "ArcadiaPrescriptionData",
+				"structureMap": "ArcadiaPrescriptionMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest",
+				"dateFields": [],
+				"provenanceStructureDefinition": "ArcadiaPrescriptionProvenanceData",
+				"provenanceStructureMap": "ArcadiaPrescriptionProvenanceMap"
+			}
+		],
+		"Observation": [
+			{
+				"arcadiaResourceName": "result",
+				"structureDefinition": "ArcadiaLaboratoryResult-ResultData",
+				"structureMap": "ArcadiaLaboratoryResult-ResultMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab",
+				"dateFields": [],
+				"provenanceStructureDefinition": "ArcadiaLaboratoryResult-ResultProvenanceData",
+				"provenanceStructureMap": "ArcadiaLaboratoryResult-ResultProvenanceMap"
+			},
+			{
+				"arcadiaResourceName": "vitals",
+				"structureDefinition": "ArcadiaBMIForAgeData",
+				"structureMap": "ArcadiaBMIForAgeMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age",
+				"dateFields": [],
+				"provenanceStructureDefinition": "ArcadiaBMIForAgeProvenanceData",
+				"provenanceStructureMap": "ArcadiaBMIForAgeProvenanceMap"
+			},
+			{
+				"arcadiaResourceName": "maintenance",
+				"structureDefinition": "ArcadiaMaintenanceData",
+				"structureMap": "ArcadiaMaintenanceMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus",
+				"dateFields": [],
+				"provenanceStructureDefinition": "ArcadiaMaintenanceProvenanceData",
+				"provenanceStructureMap": "ArcadiaMaintenanceProvenanceMap"
+			}
+		],
+		"Organization": [
+			{
+				"arcadiaResourceName": "planBillingProviderAddress",
+				"structureDefinition": "ArcadiaPlanBillingProviderAddressData",
+				"structureMap": "ArcadiaPlanBillingProviderAddressMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization",
+				"dateFields": [],
+				"provenanceStructureDefinition": "ArcadiaPlanBillingProviderAddressProvenanceData",
+				"provenanceStructureMap": "ArcadiaPlanBillingProviderAddressProvenanceMap"
+			},
+			{
+				"arcadiaResourceName": "planBillingProvider",
+				"structureDefinition": "ArcadiaPlanBillingProviderData",
+				"structureMap": "ArcadiaPlanBillingProviderMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization",
+				"dateFields": [],
+				"provenanceStructureDefinition": "ArcadiaPlanBillingProviderProvenanceData",
+				"provenanceStructureMap": "ArcadiaPlanBillingProviderProvenanceMap"
+			}
+		],
+		"Patient": [
+			{
+				"arcadiaResourceName": "patient",
+				"structureDefinition": "ArcadiaPatientData",
+				"structureMap": "ArcadiaPatientMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient",
+				"dateFields": [
+					"birthDate",
+					"modifyTimestamp"
+				],
+				"provenanceStructureDefinition": "ArcadiaPatientProvenanceData",
+				"provenanceStructureMap": "ArcadiaPatientProvenanceMap"
+			}
+		],
+		"Practitioner": [
+			{
+				"arcadiaResourceName": "planProvider",
+				"structureDefinition": "ArcadiaPlanProviderData",
+				"structureMap": "ArcadiaPlanProviderMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner",
+				"dateFields": [
+					"dob",
+					"modify_timestamp",
+					"create_timestamp"
+				],
+				"provenanceStructureDefinition": "ArcadiaPlanProviderProvenanceData",
+				"provenanceStructureMap": "ArcadiaPlanProviderProvenanceMap"
+			},
+			{
+				"arcadiaResourceName": "planProviderAddress",
+				"structureDefinition": "ArcadiaPlanProviderAddressData",
+				"structureMap": "ArcadiaPlanProviderAddressMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner",
+				"dateFields": [],
+				"provenanceStructureDefinition": "ArcadiaPlanProviderAddressProvenanceData",
+				"provenanceStructureMap": "ArcadiaPlanProviderAddressProvenanceMap"
+			},
+			{
+				"arcadiaResourceName": "provider",
+				"structureDefinition": "ArcadiaProviderData",
+				"structureMap": "ArcadiaProviderMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner",
+				"dateFields": [],
+				"provenanceStructureDefinition": "ArcadiaProviderProvenanceData",
+				"provenanceStructureMap": "ArcadiaProviderProvenanceMap"
+			}
+		],
+		"Procedure": [
+			{
+				"arcadiaResourceName": "charge",
+				"structureDefinition": "AcracadiaChargeData",
+				"structureMap": "AcracadiaChargeMap",
+				"resourceProfileUrl": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure",
+				"dateFields": [
+					"charge_date",
+					"modify_timestamp"
+				],
+				"provenanceStructureDefinition": "AcracadiaChargeProvenanceData",
+				"provenanceStructureMap": "AcracadiaChargeProvenanceMap"
+			}
+		]
+	}
+}

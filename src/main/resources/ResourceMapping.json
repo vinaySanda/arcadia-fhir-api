@@ -1,0 +1,51 @@
+{
+	"type": "config",
+	"name": "dynamicApiConfig",
+	"version": "1.0",
+	"@note": "FHIR APIs to Arcadia APIs Mappong",
+	"apiInfo": {
+		"querySyntax": "{person(id: \"<person-id>\") {<arcadia-resource>}}",
+		"resourceUrl": "objects/<arcadia-resource>/<id>"
+	},
+	"resources": {
+		"AllergyIntolerance": {
+			"arcadiaResourceName": "allergy"
+		},
+		"Appointment": {
+			"arcadiaResourceName": "appointment"
+		},
+		"Condition": {
+			"arcadiaResourceName": "assessment problem"
+		},
+		"DiagnosticReport": {
+			"arcadiaResourceName": "result"
+		},
+		"Encounter": {
+			"arcadiaResourceName": "encounter adt"
+		},
+		"Immunization": {
+			"arcadiaResourceName": "immunization"
+		},
+		"Location": {
+			"arcadiaResourceName": "planSite planSiteAddress planLocation planLocationAddress"
+		},
+		"MedicationRequest": {
+			"arcadiaResourceName": "medicationList prescription"
+		},
+		"Observation": {
+			"arcadiaResourceName": "result vitals maintenance"
+		},
+		"Organization": {
+			"arcadiaResourceName": "planBillingProviderAddress planBillingProvider"
+		},
+		"Patient": {
+			"arcadiaResourceName": "patient"
+		},
+		"Practitioner": {
+			"arcadiaResourceName": "planProvider planProviderAddress provider"
+		},
+		"Procedure": {
+			"arcadiaResourceName": "charge"
+		}
+	}
+}
