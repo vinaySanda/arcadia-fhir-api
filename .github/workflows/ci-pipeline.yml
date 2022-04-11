@@ -20,7 +20,12 @@ jobs:
         distribution: adopt
         cache: maven
     - name: Build with Maven
-      run: mvn spring-boot:build-image
+      run: |
+        mvn clean install
+        mv /home/runner/work/arcadia-fhir-api/arcadia-fhir-api/target/arcadia-fhir-api.jar /home/runner/work/arcadia-fhir-api/arcadia-fhir-api
+#        cd /home/runner/work/arcadia-fhir-api/arcadia-fhir-api/
+#        ls
+          
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -42,5 +47,6 @@ jobs:
         
     - name: Build, tag, and push image to Amazon ECR
       run: |
-        docker tag docker.io/xyramsoft/arcadia-fhir/arcadia-fhir-api:latest 427804588164.dkr.ecr.us-east-1.amazonaws.com/arcadia-fhir-api:${{ steps.date.outputs.date }}
+        docker build -t arcadia-fhir-api .
+        docker tag arcadia-fhir-api:latest 427804588164.dkr.ecr.us-east-1.amazonaws.com/arcadia-fhir-api:${{ steps.date.outputs.date }}
         docker push 427804588164.dkr.ecr.us-east-1.amazonaws.com/arcadia-fhir-api:${{ steps.date.outputs.date }}
